@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 @WebServlet("/index")
 public class Powitanie extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest req){
+    public void doGet(HttpServletRequest request){
 
     }
 }
