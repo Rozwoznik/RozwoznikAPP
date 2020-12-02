@@ -7,8 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<link href="CSS/loginForm.css" rel="stylesheet" type="text/css">
 <head>
-    <title>Title</title>
+    <title>Rozwoznik-Panel</title>
 </head>
 <body>
     <h1>CZY TO WRESZCIE ZACZNIE DZIAŁAĆ?????</h1>

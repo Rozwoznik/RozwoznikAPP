@@ -15,7 +15,7 @@ public class Login extends HttpServlet{
         if(name.equals("admin") && pass.equals("admin")){
             response.sendRedirect("welcome.jsp");
         } else {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("loginForm.jsp");
         }
     }
 
