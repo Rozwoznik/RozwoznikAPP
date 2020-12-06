@@ -42,7 +42,6 @@
             <div>
                 <button class="btn btn-block btn-info ripple-effect" type="submit" name="Submit" alt="sign in">Sign in</button>
             </div>
-
     </div>
     </form>
 </div>

@@ -13,19 +13,6 @@ public class Register extends HttpServlet{
         String repass = request.getParameter("repass");
         String email = request.getParameter("email");
 
-        if (name == null) {
-            if (pass == repass) {
-                if (email == null) {
-                    response.sendRedirect("welcome.jsp");
-                } else {
-                    response.sendRedirect("index.jsp");
-                }
-            }else {
-                response.sendRedirect("index.jsp");
-            }
-        }else {
-            response.sendRedirect("index.jsp");
-        }
     }
 
 
