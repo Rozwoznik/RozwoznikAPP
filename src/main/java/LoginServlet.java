@@ -1,5 +1,9 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,15 +20,40 @@ public class LoginServlet extends HttpServlet {
         PrintWriter out=response.getWriter();
         request.getRequestDispatcher("link.html").include(request, response);
 
-        String name=request.getParameter("name");
-        String password=request.getParameter("password");
-
-        if(password.equals("admin123")){
-            out.print("Welcome, "+name);
-            HttpSession session=request.getSession();
-            session.setAttribute("name",name);
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-        else{
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://25.43.228.156:3306/rozwoznik", "kacper", "admin");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        String query = "SELECT * FROM User;";
+
+        // create the mysql insert preparedstatement
+        try {
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        String password=request.getParameter("password");
+        PreparedStatement preparedStmt = null;
+        
+        if(password.equals("admin123")){
+            try {
+                preparedStmt = connection.prepareStatement(query);
+                preparedStmt.executeQuery();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            out.print("Welcome, "+preparedStmt);
+            HttpSession session=request.getSession();
+            session.setAttribute("name",query.toString());
+        } else{
             out.print("Sorry, username or password error!");
             request.getRequestDispatcher("login.jsp").include(request, response);
         }

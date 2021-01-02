@@ -28,9 +28,9 @@ public class RegisterServlet extends HttpServlet{
             String repass = request.getParameter("repass");
             PasswordEncrypter passwordEncrypter = new PasswordEncrypter();
             String email = request.getParameter("email");
-            if (!pass.equals(repass)) {
+            /*if (!pass.toString().equals(repass.toString())) {
                 response.getWriter().println("Hasła się nie zgadzają");
-            } else {
+            } else {*/
                 Connection connection = DriverManager.getConnection("jdbc:mysql://25.43.228.156:3306/rozwoznik", "kacper", "admin");
                 String query = " insert into User (`idUser`, `Username`, `Password`, `Email`)"
                         + " values (?, ?, ?, ?)";
@@ -46,7 +46,7 @@ public class RegisterServlet extends HttpServlet{
                 preparedStmt.execute();
 
                 connection.close();
-            }
+            //}
             } catch(SQLException throwables){
                 throwables.printStackTrace();
             }
