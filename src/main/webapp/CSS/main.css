@@ -1,23 +1,11 @@
-
-
-
-
-/*//////////////////////////////////////////////////////////////////
-[ FONT ]*/
-
 @font-face {
   font-family: Verdana;
 
 }
 
-
-
-/*//////////////////////////////////////////////////////////////////
-[ RESTYLE TAG ]*/
-
 * {
-	margin: 0px; 
-	padding: 0px; 
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
@@ -126,7 +114,7 @@ iframe {
 }
 
 .container-login {
-  width: 100%;  
+  width: 100%;
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
@@ -147,7 +135,7 @@ iframe {
   overflow: hidden;
   height:auto;
   padding:20px;
- 
+
 }
 
 
@@ -207,7 +195,7 @@ input.input {
 /*------------------------------------------------------------------
 [ Focus Input ]*/
 
-.focus-input-1, 
+.focus-input-1,
 .focus-input-2 {
   display: block;
   position: absolute;
@@ -241,13 +229,13 @@ input.input {
 [ Button ]*/
 .container-login-form-btn {
   width: 100%;
- 
+
   display: flex;
   flex-wrap: wrap;
 }
 
 .login-form-btn {
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -267,9 +255,6 @@ input.input {
 .login-form-btn:hover {
   background-color: #333333;
 }
-
-
-
 
 @media (max-width: 992px) {
   .alert-validate::before {
