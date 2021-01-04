@@ -22,7 +22,7 @@ public class ProfileServlet extends HttpServlet {
             out.print("Hello, "+name+" Welcome to Profile");
         }
         else{
-            out.print("Please login first");
+            out.print("Musisz sie zalogowac...");
             request.getRequestDispatcher("login.jsp").include(request, response);
         }
         out.close();

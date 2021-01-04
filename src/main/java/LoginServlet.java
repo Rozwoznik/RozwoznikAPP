@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", nickname);
         } else {
-            out.print("Sorry, username or password error!");
+            out.print("Bledny login lub haslo!");
             request.getRequestDispatcher("login.jsp").include(request, response);
         }
         out.close();

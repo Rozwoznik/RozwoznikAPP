@@ -1,5 +1,4 @@
 import Model.User;
-import Services.DatabaseService;
 import Services.PasswordEncrypter;
 import Services.UserDataService;
 
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 
 @WebServlet(name = "/RegisterServlet", urlPatterns = {"/RegisterServlet"})
 public class RegisterServlet extends HttpServlet{

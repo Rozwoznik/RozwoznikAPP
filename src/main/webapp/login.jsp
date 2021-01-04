@@ -9,12 +9,15 @@
 <html>
 <head>
     <title>Rozwoźnik logowanie</title>
+    <link rel="stylesheet" href="CSS/loginForm.css">
 </head>
 <body>
-<form action="Login" method="post">
-    Nick:<input type="text" name="name"><br>
-    Password:<input type="password" name="password"><br>
-    <input type="submit" value="login">
-</form>
+    <div id="parent">
+        <form id="form_login" action="Login" method="post">
+            Nazwa uzytkownika:<input type="text" name="name"><br>
+            Haslo:<input type="password" name="password"><br>
+            <input class="blue_button" type="submit" value="Login">
+        </form>
+    </div>
 </body>
 </html>
