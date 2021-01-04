@@ -26,4 +26,14 @@ public class DatabaseService {
         }
         return null;
     }
+
+    public static boolean execute(String query){
+        try {
+            Statement statement = connection.createStatement();
+            return statement.execute(query);
+        } catch (SQLException sqlException){
+            System.out.println(sqlException);
+        }
+        return false;
+    }
 }

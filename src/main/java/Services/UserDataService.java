@@ -8,14 +8,15 @@ import java.sql.SQLException;
 public class UserDataService {
 
     public void CreateUser(User user){
-
+        String query = String.format("INSERT INTO `User` (`idUser`, `Username`, `Password`, `Email`) VALUES (%d, '%s', '%s', '%s')",null ,user.getUsername(), user.getPassword(), user.getEmail());
+        DatabaseService.execute(query);
     }
 
     public void UpdataUserData(int id, User user){
 
     }
 
-    public User getUser(int id) {
+    public User getUserById(int id) {
         String query = String.format("SELECT * From User where idUser=%d", id);
         ResultSet rs = DatabaseService.executeQuery(query);
         try {
@@ -45,6 +46,20 @@ public class UserDataService {
             System.out.println(sqlException);
         }
         return "";
+    }
+
+    public boolean existUserInDatabase(String username){
+        String query = String.format("SELECT Password From User where Username='%s'", username);
+        ResultSet rs = DatabaseService.executeQuery(query);
+        try {
+            while (rs.next()) {
+                rs.close();
+                return true;
+            }
+        } catch (SQLException sqlException){
+            System.out.println(sqlException);
+        }
+        return false;
     }
 
     public void deleteUser(int id){

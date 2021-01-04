@@ -7,6 +7,22 @@ public class User {
     private String Email;
     private UserData userData;
 
+    public String getUsername() {
+        return this.Username;
+    }
+
+    public String getPassword() {
+        return this.Password;
+    }
+
+    public String getEmail() {
+        return this.Email;
+    }
+
+    public UserData getUserData() {
+        return this.userData;
+    }
+
     public User(String _Username, String _Password, String _Email){
         Username = _Username;
         Password = _Password;
@@ -22,6 +38,5 @@ public class User {
     }
 
     public User() {
-
     }
 }
