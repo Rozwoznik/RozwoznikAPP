@@ -1,9 +1,10 @@
+import Services.DatabaseService;
+import Services.PasswordEncrypter;
+import Services.UserDataService;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,43 +18,22 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        PrintWriter out=response.getWriter();
+        PrintWriter out = response.getWriter();
         request.getRequestDispatcher("link.html").include(request, response);
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        Connection connection = null;
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://25.43.228.156:3306/rozwoznik", "kacper", "admin");
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        String query = "SELECT * FROM User;";
+        String nickname = request.getParameter("name");
+        String password = request.getParameter("password");
 
-        // create the mysql insert preparedstatement
-        try {
-            PreparedStatement preparedStmt = connection.prepareStatement(query);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        UserDataService uds = new UserDataService();
+        PasswordEncrypter pe = new PasswordEncrypter();
 
-        String password=request.getParameter("password");
-        PreparedStatement preparedStmt = null;
-        
-        if(password.equals("admin123")){
-            try {
-                preparedStmt = connection.prepareStatement(query);
-                preparedStmt.executeQuery();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-            out.print("Welcome, "+preparedStmt);
-            HttpSession session=request.getSession();
-            session.setAttribute("name",query.toString());
-        } else{
+        String passwd = uds.getUserPasswordByUserName(nickname);
+
+        if (passwd.equals(pe.Encrypt(password))) {
+            out.print("Welcome, " + nickname);
+            HttpSession session = request.getSession();
+            session.setAttribute("username", nickname);
+        } else {
             out.print("Sorry, username or password error!");
             request.getRequestDispatcher("login.jsp").include(request, response);
         }
