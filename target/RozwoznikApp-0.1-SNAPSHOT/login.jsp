@@ -15,8 +15,9 @@
     <div id="parent">
         <form id="form_login" action="Login" method="post">
             Nazwa uzytkownika:<input type="text" name="name"><br>
-            Haslo:<input type="password" name="password"><br>
-            <input class="blue_button" type="submit" value="Login">
+            Haslo:<input type="password" name="password"><br><br>
+            <input class="blue_button" type="submit" value="Login"><br>
+            Nie masz konta? <a href="register.jsp">Zaloz je!</a>
         </form>
     </div>
 </body>

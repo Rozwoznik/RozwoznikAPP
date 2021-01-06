@@ -8,10 +8,7 @@ import java.sql.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 @WebServlet(name = "/Login", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
@@ -30,9 +27,8 @@ public class LoginServlet extends HttpServlet {
         String passwd = uds.getUserPasswordByUserName(nickname);
 
         if (passwd.equals(pe.Encrypt(password))) {
-            out.print("Welcome, " + nickname);
-            HttpSession session = request.getSession();
-            session.setAttribute("username", nickname);
+            Cookie ck = new Cookie("name",nickname);
+            response.addCookie(ck);
         } else {
             out.print("Bledny login lub haslo!");
             request.getRequestDispatcher("login.jsp").include(request, response);

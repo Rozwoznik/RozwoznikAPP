@@ -10,8 +10,9 @@
         Nazwa uzytkownika:<input type="text" name="nick"><br>
         Haslo:<input type="password" name="pass"><br>
         Powtorz haslo:<input type="password" name="repass"><br>
-        Email:<input type="text" name="email"><br>
-        <input class="blue_button" type="submit" value="Zarejestruj">
+        Email:<input type="text" name="email"><br><br>
+        <input class="blue_button" type="submit" value="Zarejestruj"><br>
+        Masz konto? <a href="login.jsp">Zaloguj się!</a>
         </form>
     </div>
 </body>

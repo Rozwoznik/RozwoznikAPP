@@ -2,10 +2,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 @WebServlet(name = "/ProfileServlet", urlPatterns = {"/ProfileServlet"})
 public class ProfileServlet extends HttpServlet {
@@ -13,17 +10,20 @@ public class ProfileServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
-        request.getRequestDispatcher("link.html").include(request, response);
+        request.getRequestDispatcher("Links/logedLink.html").include(request, response);
 
-        HttpSession session=request.getSession(false);
-        if(session!=null){
-            String name=(String)session.getAttribute("name");
-
-            out.print("Hello, "+name+" Welcome to Profile");
-        }
-        else{
-            out.print("Musisz sie zalogowac...");
-            request.getRequestDispatcher("login.jsp").include(request, response);
+        Cookie ck[]=request.getCookies();
+        if(ck!=null){
+            Cookie name=ck[1];
+            if(name.getName()=="name" && !name.getValue().equals("")){
+                out.print("<b>Welcome to Profile</b><br><br>");
+                for (Cookie c: ck) {
+                    out.print("Name: "+c.getName()+" Value: "+c.getValue()+"<br>");
+                }
+            } else{
+                out.print("Please login first");
+                request.getRequestDispatcher("login.jsp").include(request, response);
+            }
         }
         out.close();
     }
