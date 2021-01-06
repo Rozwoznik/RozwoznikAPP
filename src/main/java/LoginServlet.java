@@ -15,6 +15,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         request.getRequestDispatcher("link.html").include(request, response);
 
@@ -29,6 +31,7 @@ public class LoginServlet extends HttpServlet {
         if (passwd.equals(pe.Encrypt(password))) {
             Cookie ck = new Cookie("name",nickname);
             response.addCookie(ck);
+            request.getRequestDispatcher("ProfileServlet").include(request, response);
         } else {
             out.print("Bledny login lub haslo!");
             request.getRequestDispatcher("login.jsp").include(request, response);

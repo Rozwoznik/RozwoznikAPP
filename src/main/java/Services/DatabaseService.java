@@ -11,7 +11,7 @@ public class DatabaseService {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://25.43.228.156:3306/rozwoznik", "kacper", "admin");
+            connection = DriverManager.getConnection("jdbc:mysql://25.43.228.156:3306/rozwoznik?user=kacper&password=admin&useUnicode=true&characterEncoding=UTF-8");
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }

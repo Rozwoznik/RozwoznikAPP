@@ -20,6 +20,8 @@ public class RegisterServlet extends HttpServlet{
         PrintWriter out=response.getWriter();
         UserDataService uds = new UserDataService();
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
 
         String nick = request.getParameter("nick");
         String pass = request.getParameter("pass");

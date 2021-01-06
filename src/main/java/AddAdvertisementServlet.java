@@ -15,6 +15,8 @@ public class AddAdvertisementServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         request.getRequestDispatcher("Links/logedLink.html").include(request, response);
 
