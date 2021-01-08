@@ -40,7 +40,7 @@ public class RegisterServlet extends HttpServlet{
         } else {
             User user = new User(nick, pe.Encrypt(pass), email);
             uds.CreateUser(user);
-            request.getRequestDispatcher("link.html").include(request, response);
+            request.getRequestDispatcher("Links/link.html").include(request, response);
             HttpSession session = request.getSession();
             session.invalidate();
         }

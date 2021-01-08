@@ -21,6 +21,7 @@ public class AddAdvertisementServlet extends HttpServlet {
         request.getRequestDispatcher("Links/logedLink.html").include(request, response);
 
 
+
         HttpSession session=request.getSession(false);
         if(session!=null) {
 

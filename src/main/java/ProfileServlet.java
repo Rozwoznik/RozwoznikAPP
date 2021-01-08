@@ -22,19 +22,8 @@ public class ProfileServlet extends HttpServlet {
         if (ck != null) {
             if (ck.length != 1) {
                 out.print("<b>Welcome to Profile:  </b>");
-                out.print("<b>" + ck[0].getValue() + "</b><br>");
-                String query = "SELECT * FROM `Advertisement`";
-                ResultSet rs = DatabaseService.executeQuery(query);
-                out.print("Produkty: <br>");
-                try {
-                    while(rs.next()) {
-                        out.print("ID: "+rs.getInt(1)+"");
-                        out.print("  Nazwa produktu: "+rs.getString(2) + "<br>");
-                    }
-                } catch (SQLException sqlException) {
-                    System.out.println(sqlException);
-                }
-
+                out.print("<b>" + ck[1].getValue() + "</b><br>");
+                out.print("<b>ID : "+ck[2].getValue());
             } else {
                 out.print("Please login first");
                 request.getRequestDispatcher("login.jsp").include(request, response);

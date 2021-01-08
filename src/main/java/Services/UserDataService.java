@@ -24,12 +24,27 @@ public class UserDataService {
                 String password = rs.getString("Password");
                 String email = rs.getString("Email");
                 rs.close();
-                return new User(userName, password, email);
+                return new User(userName,password,email);
             }
         } catch (SQLException sqlException){
             System.out.println(sqlException);
         }
         return new User();
+    }
+
+    public String getUserIdByNickname(String username) {
+        String query = String.format("SELECT idUser From User where Username='%s'", username);
+        ResultSet rs = DatabaseService.executeQuery(query);
+        try {
+            while (rs.next()) {
+                int userName = rs.getInt("idUser");
+                rs.close();
+                return String.format("%d",userName);
+            }
+        } catch (SQLException sqlException){
+            System.out.println(sqlException);
+        }
+        return "-1";
     }
 
     public String getUserPasswordByUserName(String username) {

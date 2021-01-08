@@ -18,10 +18,10 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("link.html").include(request, response);
 
         String nickname = request.getParameter("name");
         String password = request.getParameter("password");
+        String idUser;
 
         UserDataService uds = new UserDataService();
         PasswordEncrypter pe = new PasswordEncrypter();
@@ -29,9 +29,13 @@ public class LoginServlet extends HttpServlet {
         String passwd = uds.getUserPasswordByUserName(nickname);
 
         if (passwd.equals(pe.Encrypt(password))) {
-            Cookie ck = new Cookie("name",nickname);
-            response.addCookie(ck);
-            request.getRequestDispatcher("ProfileServlet").include(request, response);
+            idUser = uds.getUserIdByNickname(nickname);
+            Cookie ck[] = {new Cookie("name",nickname),new Cookie("idUser", idUser)};
+            for (Cookie c: ck) {
+                response.addCookie(c);
+            }
+
+            response.sendRedirect("/ProfileServlet");
         } else {
             out.print("Bledny login lub haslo!");
             request.getRequestDispatcher("login.jsp").include(request, response);
