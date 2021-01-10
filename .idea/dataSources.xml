@@ -7,11 +7,5 @@
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mariadb://25.43.228.156:3306/rozwoznik</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="MySQL - rozwoznik@localhost" uuid="f3b5f00e-d95a-4414-8705-2f2de3efef69">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://25.43.228.156:3306/rozwoznik</jdbc-url>
-    </data-source>
   </component>
 </project>

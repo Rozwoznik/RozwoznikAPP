@@ -20,13 +20,10 @@ public class AddAdvertisementServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         request.getRequestDispatcher("Links/logedLink.html").include(request, response);
 
-
-
         HttpSession session=request.getSession(false);
         if(session!=null) {
 
         }
-
 
         out.close();
     }

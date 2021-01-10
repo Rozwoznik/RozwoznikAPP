@@ -16,7 +16,7 @@ public class ProfileServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("Links/logedLink.html").include(request, response);
+        request.getRequestDispatcher("login.jsp").include(request, response);
 
         Cookie ck[] = request.getCookies();
         if (ck != null) {

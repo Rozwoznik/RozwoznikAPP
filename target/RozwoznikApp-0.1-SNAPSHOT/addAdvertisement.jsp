@@ -20,7 +20,7 @@
 
     <div class="container-login">
         <div class="wrap-login p-l-55 p-r-55 p-t-65 p-b-50">
-            <form class="login-form validate-form" action="addAdvertisement" method="post">
+            <form class="login-form validate-form" action="AddAdvertisementServlet" method="post">
                     <span class="login-form-title p-b-33">
                         Wystaw Ogłoszenie
                     </span>
