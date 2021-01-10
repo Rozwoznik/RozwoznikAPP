@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
-            $( "#datepicker" ).datepicker();
+            $( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
         } );
     </script>
 </head>
@@ -21,7 +21,7 @@
             Kategoria:<input type="text" name="category"><br>
             Cena:<input type="text" name="price"><br>
             Opis:<input type="text" name="description"><br>
-            Data realizacji zamówienia:<input type="text" id="datepicker"><br>
+            Data realizacji zamówienia:<input type="text" id="datepicker" name="datepicker"><br>
             <input type="submit" value="Dodaj">
         </form>
     </div>

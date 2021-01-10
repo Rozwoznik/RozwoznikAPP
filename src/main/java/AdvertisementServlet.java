@@ -36,8 +36,9 @@ public class AdvertisementServlet extends HttpServlet {
                 "    <th>Nazwa</th> " +
                 "    <th>Kategoria</th>" +
                 "    <th>Cena</th>" +
-                "    <th>Kiedy dodane</th>" +
-                "    <th>Kto dodał</th>" +
+                "    <th>Kiedy zostalo dodane</th>" +
+                "    <th>Kiedy ogloszenie wygasa</th>" +
+                "    <th>Kto dodal</th>" +
                 "</tr>");
         try {
             while (rs.next()) {
@@ -46,7 +47,8 @@ public class AdvertisementServlet extends HttpServlet {
                 out.print("<th>" + rs.getString(2) + "</th>");
                 out.print("<th>" + rs.getString(3) + "</th>");
                 out.print("<th>" + rs.getString(4) + "</th>");
-                out.print("<th>" + rs.getDate(6) + "</th>");
+                out.print("<th>" + rs.getString(6) + "</th>");
+                out.print("<th>" + rs.getString(7) + "</th>");
                 out.print("<th>" + rs.getString(8) + "</th>");
                 out.print("</tr>");
             }
