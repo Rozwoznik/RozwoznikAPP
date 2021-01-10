@@ -17,7 +17,7 @@
 
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="#news">Twój Profil</a>
+        <a href="profil.jsp">Twój Profil</a>
         <a href="ogloszenia.jsp">Ogłoszenia</a>
         <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
         <a href="login.jsp" style="float:right; "> Zaloguj Się</a>

@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Ogloszenia</title>
+    <title>Twój profil</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
@@ -24,16 +24,16 @@
 					</span>
 
                 <div class="container-login-form-btn m-t-20">
-                    <a href="#none" class="login-form-btn">Moje Ogloszenia</a>
+                    <a href="#none" class="login-form-btn">Twoje Dane</a>
 
                 </div>
 
                 <div class="container-login-form-btn m-t-20">
-                    <a href="addAdvertisement.jsp" class="login-form-btn">Dodaj Ogloszenie</a>
+                    <a href="addAddress.jsp" class="login-form-btn">Uzupelnij Adres</a>
                 </div>
 
                 <div class="container-login-form-btn m-t-20">
-                    <a href="addAdvertisement.jsp" class="login-form-btn">Wyszukaj</a>
+                    <a href="addAdvertisement.jsp" class="login-form-btn">Uzupelnij Dane</a>
 
                 </div>
             </form>
