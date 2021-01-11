@@ -18,14 +18,17 @@
 
     <div class="container-login">
         <div class="wrap-login p-l-55 p-r-55 p-t-65 p-b-50">
-            <form class="login-form validate-form">
+
+
+            <form class="login-form validate-form" action="UserDataServlet" method="post">
 					<span class="login-form-title p-b-33">
 						Co chcesz zrobić
 					</span>
 
-                <div class="container-login-form-btn m-t-20">
-                    <a href="#none" class="login-form-btn">Twoje Dane</a>
-
+                <div class="container-login-form-btn m-t-20" type="submit" value="Login">
+                    <button class="login-form-btn">
+                        Twoje Dane
+                    </button>
                 </div>
 
                 <div class="container-login-form-btn m-t-20">
