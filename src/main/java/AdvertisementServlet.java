@@ -23,6 +23,7 @@ public class AdvertisementServlet extends HttpServlet {
         Cookie ck[] = request.getCookies();
 
         String kasujBtn = "<th> <button name=\"kasacja\" type=\"submit\" >KASUJ</button></th>";
+
         String query = "SELECT * FROM `Advertisement`";
         ResultSet rs = DatabaseService.executeQuery(query);
 
