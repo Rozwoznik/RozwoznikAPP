@@ -15,7 +15,7 @@ public class ProfileServlet extends HttpServlet {
 
         Cookie ck[] = request.getCookies();
         if (ck != null) {
-            if (ck.length != 1) {
+            if (ck.length != 2) {
                 out.print("<b>Welcome to Profile:  </b>");
                 out.print("<b>" + ck[2].getValue() + "</b><br>");
                 out.print("<b>ID : "+ck[3].getValue());
