@@ -1,4 +1,3 @@
-<%@ page import="Services.AdvertisementService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -35,11 +34,9 @@
                 </div>
 
                 <div class="container-login-form-btn m-t-20">
-                    <a href="FindAdvertisement.jsp" class="login-form-btn">Przeszukaj oferty</a>
+                    <a href="addAdvertisement.jsp" class="login-form-btn">Wyszukaj</a>
+
                 </div>
-
-
-
             </form>
         </div>
     </div>
