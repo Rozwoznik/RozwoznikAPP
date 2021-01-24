@@ -1,11 +1,48 @@
-@font-face {
-  font-family: Verdana;
 
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
 }
 
+.topnav {
+	background-color: black;
+	overflow: hidden;
+}
+
+	/* Style the links inside the navigation bar */
+	.topnav a {
+		float: left;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+
+		/* Change the color of links on hover */
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		/* Add a color to the active/current link */
+		.topnav a.active {
+			background-color: #4272d7;
+			color: white;
+		}
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
 * {
-	margin: 0px;
-	padding: 0px;
+	margin: 0px; 
+	padding: 0px; 
 	box-sizing: border-box;
 }
 
@@ -16,6 +53,7 @@ body, html {
 
 /*---------------------------------------------*/
 a {
+	text-decoration: none;
 	font-family: OpenSans-Regular;
 	font-size: 14px;
 	line-height: 1.7;
@@ -60,9 +98,13 @@ input {
 	border: none;
 }
 
+.inputfind {
+	outline: none;
+}
+
 textarea {
-  outline: none;
-  border: none;
+	outline: none;
+	border: none;
 }
 
 textarea:focus, input:focus {
@@ -109,23 +151,29 @@ iframe {
 [ login ]*/
 
 .limiter {
-  width: 100%;
-  margin: 0 auto;
+	width: 100%;
+	margin: 0 auto;
+	background-image: url("mains.png");
+	background-size: auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .container-login {
-  width: 100%;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  background: #e9faff;
+	width: 100%;
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	
+	
 }
 
 .wrap-login {
@@ -135,7 +183,7 @@ iframe {
   overflow: hidden;
   height:auto;
   padding:20px;
-
+ 
 }
 
 
@@ -195,7 +243,7 @@ input.input {
 /*------------------------------------------------------------------
 [ Focus Input ]*/
 
-.focus-input-1,
+.focus-input-1, 
 .focus-input-2 {
   display: block;
   position: absolute;
@@ -206,7 +254,7 @@ input.input {
   pointer-events: none;
 }
 
-
+.
 
 
 
@@ -229,20 +277,19 @@ input.input {
 [ Button ]*/
 .container-login-form-btn {
   width: 100%;
-
   display: flex;
   flex-wrap: wrap;
 }
 
 .login-form-btn {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  width: 100%;
-  height: 60px;
-  background-color: #4272d7;
+	text-decoration: unset;
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+ 	 padding: 0 20px;
+ 	 width: 100%;
+ 	 height: 60px;
+	background-color: #4272d7;
 
   font-family: OpenSans-Regular;
   font-size: 14px;
@@ -254,7 +301,28 @@ input.input {
 
 .login-form-btn:hover {
   background-color: #333333;
+	text-decoration: none;
+
 }
+
+/*LISTAAAA*/
+.wrap-input select {
+	display: block;
+	background: transparent;
+	font-family: OpenSans-Regular;
+	font-size: 20px;
+	color: #666666;
+	line-height: 1.2;
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	height: 68px;
+	padding: 0 10px 0 25px;
+	background: transparent;
+	font-family: OpenSans-Regular;
+}
+/*LISTAAAA*/
 
 @media (max-width: 992px) {
   .alert-validate::before {
