@@ -1,5 +1,4 @@
-<%@ page import="Services.UserService" %>
-<%@ page import="Model.User" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Kuczma
   Date: 01.01.2021
@@ -18,7 +17,7 @@
 
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="nonLog.jsp" >Twój Profil</a>
+        <a href="ProfileServlet">Twój Profil</a>
         <a href="ogloszenia.jsp">Ogłoszenia</a>
         <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
         <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
@@ -41,6 +40,7 @@
                     <span class="focus-input-1"></span>
                     <span class="focus-input-2"></span>
                 </div>
+
 
                 <div class="container-login-form-btn m-t-20 " type="submit" value="Login">
                     <button class="login-form-btn">

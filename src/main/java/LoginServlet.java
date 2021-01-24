@@ -1,11 +1,8 @@
-import Services.DatabaseService;
 import Services.PasswordEncrypter;
 import Services.UserDataService;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -30,8 +27,8 @@ public class LoginServlet extends HttpServlet {
 
         if (passwd.equals(pe.Encrypt(password))) {
             idUser = uds.getUserIdByNickname(nickname);
-            Cookie ck[] = {new Cookie("name",nickname),new Cookie("idUser", idUser)};
-            for (Cookie c: ck) {
+            Cookie ck[] = {new Cookie("name", nickname), new Cookie("idUser", idUser)};
+            for (Cookie c : ck) {
                 response.addCookie(c);
             }
 
