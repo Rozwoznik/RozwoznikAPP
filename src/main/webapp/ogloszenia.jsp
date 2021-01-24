@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <%@ page import="Services.AdvertisementService" %>
-=======
->>>>>>> 7cdc1a2... WERSJA POPRAWNA!!! KACPRZE Z PRZYSZŁOSĆI COFAJ SIĘ TU!!!
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,17 +35,11 @@
                 </div>
 
                 <div class="container-login-form-btn m-t-20">
-<<<<<<< HEAD
                     <a href="FindAdvertisement.jsp" class="login-form-btn">Przeszukaj oferty</a>
                 </div>
 
-
-
-=======
                     <a href="addAdvertisement.jsp" class="login-form-btn">Wyszukaj</a>
-
                 </div>
->>>>>>> 7cdc1a2... WERSJA POPRAWNA!!! KACPRZE Z PRZYSZŁOSĆI COFAJ SIĘ TU!!!
             </form>
         </div>
     </div>

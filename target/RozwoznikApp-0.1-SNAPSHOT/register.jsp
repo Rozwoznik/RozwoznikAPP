@@ -9,8 +9,10 @@
 
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="profil.jsp">Twój Profil</a>
-        <a href="ogloszenia.jsp">Ogłoszenia</a>
+        <a href="#news">Twój Profil</a>
+        <a href="#contact">Ogłoszenia</a>
+        <a href="#about">Twoje Ogłoszenia</a>
+        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
         <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
         <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
     </div>
@@ -56,15 +58,5 @@
         </div>
     </div>
 </div>
-    <div id="parent">
-        <form id="form_login" action="RegisterServlet" method="post">
-        Nazwa uzytkownika:<input type="text" name="nick"><br>
-        Haslo:<input type="password" name="pass"><br>
-        Powtorz haslo:<input type="password" name="repass"><br>
-        Email:<input type="text" name="email"><br><br>
-        <input class="blue_button" type="submit" value="Zarejestruj"><br>
-        Masz konto? <a href="login.jsp">Zaloguj się!</a>
-        </form>
-    </div>
 </body>
 </html>

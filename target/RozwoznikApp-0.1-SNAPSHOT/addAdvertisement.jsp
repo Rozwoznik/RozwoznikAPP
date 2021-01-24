@@ -4,6 +4,7 @@
     <title>Dodaj Ogłoszenie</title>
     <link rel="stylesheet" href="CSS/main.css">
 
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -13,6 +14,7 @@
             $( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
         } );
     </script>
+
 </head>
 <body>
 
@@ -23,13 +25,16 @@
         <a href="AdvertisementServlet">Ogłoszenia</a>
         <a href="#about">Twoje Ogłoszenia</a>
         <a href="FindAdvertisement.jsp"> Znajdz ogłoszenie </a>
-
-
+        <a href="#news">Twój Profil</a>
+        <a href="#contact">Ogłoszenia</a>
+        <a href="#about">Twoje Ogłoszenia</a>
+        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
     </div>
 
     <div class="container-login">
         <div class="wrap-login p-l-55 p-r-55 p-t-65 p-b-50">
             <form class="login-form validate-form" action="AddAdvertisement" method="post" autocomplete="off">
+            <form class="login-form validate-form" action="addAdvertisement" method="post">
                     <span class="login-form-title p-b-33">
                         Wystaw Ogłoszenie
                     </span>

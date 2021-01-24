@@ -11,10 +11,11 @@
 
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="profil.jsp">Twój Profil</a>
-        <a href="ogloszenia.jsp">Ogłoszenia</a>
-        <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
-        <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
+        <a href="#news">Twój Profil</a>
+        <a href="#contact">Ogłoszenia</a>
+        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
+        <a href="znajdzOgloszenie.html" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
+        <a href="znajdzOgloszenie.html" style="float:right; "> Zaloguj Się</a>
     </div>
 
     <div class="container-login">
@@ -37,8 +38,8 @@
                     <a href="FindAdvertisement.jsp" class="login-form-btn">Przeszukaj oferty</a>
                 </div>
 
-
-
+                    <a href="addAdvertisement.jsp" class="login-form-btn">Wyszukaj</a>
+                </div>
             </form>
         </div>
     </div>
