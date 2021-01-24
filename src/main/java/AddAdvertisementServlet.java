@@ -21,19 +21,25 @@ public class AddAdvertisementServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         Cookie ck[] = request.getCookies();
 
-        String nazwa = request.getParameter("name");
-        int kategoria = Integer.parseInt(request.getParameter("category"));
-        String opis = request.getParameter("description");
-        String cena = request.getParameter("price");
-        String dataDodania=addDate();
-        String dataKonca=request.getParameter("datePicker");
-        int ktoDodal = Integer.parseInt(ck[2].getValue());
+        if (ck != null) {
+            if (ck.length != 2) {
+                String nazwa = request.getParameter("name");
+                int kategoria = Integer.parseInt(request.getParameter("category"));
+                String opis = request.getParameter("description");
+                String cena = request.getParameter("price");
+                String dataDodania = addDate();
+                String dataKonca = request.getParameter("datePicker");
+                int ktoDodal = Integer.parseInt(ck[2].getValue());
 
-        Advertisement adv = new Advertisement(nazwa,kategoria,cena,opis,dataDodania,dataKonca,ktoDodal,0);
-        AdvertisementService as = new AdvertisementService();
-        as.CreateAdvertisement(adv);
-
-        out.close();
+                Advertisement adv = new Advertisement(nazwa, kategoria, cena, opis, dataDodania, dataKonca, ktoDodal, 0);
+                AdvertisementService as = new AdvertisementService();
+                as.CreateAdvertisement(adv);
+                response.sendRedirect("/Advertisement");
+                out.close();
+            }
+        } else {
+            response.sendRedirect("login.jsp");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

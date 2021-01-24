@@ -28,7 +28,7 @@ public class LogoutServlet extends HttpServlet {
         }
 
         out.print("You are successfully logged out!");
-
+        request.getRequestDispatcher("login.jsp").include(request, response);
         out.close();
     }
 }  

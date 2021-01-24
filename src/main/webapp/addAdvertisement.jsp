@@ -25,10 +25,8 @@
         <a href="AdvertisementServlet">Ogłoszenia</a>
         <a href="#about">Twoje Ogłoszenia</a>
         <a href="FindAdvertisement.jsp"> Znajdz ogłoszenie </a>
-        <a href="#news">Twój Profil</a>
-        <a href="#contact">Ogłoszenia</a>
-        <a href="#about">Twoje Ogłoszenia</a>
-        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
+        <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
+        <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
     </div>
 
     <div class="container-login">

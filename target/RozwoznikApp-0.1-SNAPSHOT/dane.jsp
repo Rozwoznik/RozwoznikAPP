@@ -58,7 +58,7 @@
         ResultSet rs = DatabaseService.executeQuery(query);
         try {
 
-            ou.print("<link rel=\"stylesheet\" href=\"CSS/AdvertisementStyle.css\">");
+            ou.print("<link rel=\"stylesheet\" href=\"CSS/main.css\">");
             ou.print("<form method=\"post\">");
             ou.print("<table style=\"width:100%\">");
             ou.print("<tr>" +
@@ -79,7 +79,7 @@
                     ou.print("<th>" + rs.getString(4) + "</th>");
                     ou.print("<th>" + rs.getString(6) + "</th>");
                     ou.print("<th>" + rs.getString(8) + "</th>");
-ou.print("<th><button onClick=\"remove(19)\" >KASUJ</button>");
+                    ou.print("<th><button onClick=\"remove(19)\" >KASUJ</button>");
                 }
                 ou.print("</table>");
             } catch (SQLException sqlException) {

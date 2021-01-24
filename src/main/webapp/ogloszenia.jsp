@@ -10,12 +10,12 @@
 <div class="limiter">
 
     <div class="topnav">
-        <a class="active" href="#home">Strona Domowa</a>
+        <a class="active" href="index.jsp">Strona Domowa</a>
         <a href="#news">Twój Profil</a>
-        <a href="#contact">Ogłoszenia</a>
-        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
-        <a href="znajdzOgloszenie.html" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
-        <a href="znajdzOgloszenie.html" style="float:right; "> Zaloguj Się</a>
+        <a href="dane.jsp">Ogłoszenia</a>
+        <a href="FindAdvertisement.jsp"> Znajdz ogłoszenie </a>
+        <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
+        <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
     </div>
 
     <div class="container-login">

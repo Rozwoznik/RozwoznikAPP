@@ -17,10 +17,10 @@
 <div class="limiter">
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="#news">Twój Profil</a>
-        <a href="#contact">Ogłoszenia</a>
-        <a href="#about">Twoje Ogłoszenia</a>
-        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
+        <a href="ProfileServlet">Twój Profil</a>
+        <a href="AddAddressServlet">Ogłoszenia</a>
+        <a href="test">Twoje Ogłoszenia</a>
+        <a href="FindAdvertisement"> Znajdz ogłoszenie </a>
 
 
     </div>

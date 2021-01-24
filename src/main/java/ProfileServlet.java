@@ -14,8 +14,10 @@ public class ProfileServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         Cookie ck[] = request.getCookies();
+        request.getRequestDispatcher("Links/logedLink.html").include(request, response);
         if (ck != null) {
             if (ck.length != 2) {
+                out.print("<link rel=\"stylesheet\" href=\"CSS/main.css\">");
                 out.print("<b>Welcome to Profile:  </b>");
                 out.print("<b>" + ck[2].getValue() + "</b><br>");
                 out.print("<b>ID : "+ck[3].getValue());

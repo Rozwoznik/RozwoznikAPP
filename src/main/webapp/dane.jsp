@@ -58,7 +58,7 @@
         ResultSet rs = DatabaseService.executeQuery(query);
         try {
 
-            ou.print("<link rel=\"stylesheet\" href=\"CSS/AdvertisementStyle.css\">");
+            ou.print("<link rel=\"stylesheet\" href=\"CSS/main.css\">");
             ou.print("<form method=\"post\">");
             ou.print("<table style=\"width:100%\">");
             ou.print("<tr>" +
