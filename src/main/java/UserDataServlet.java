@@ -6,17 +6,13 @@ import Services.AdressService;
 import Services.UserDataService;
 import Services.UserService;
 
-
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "/UserDataServlet", urlPatterns = {"/UserDataServlet"})
 public class UserDataServlet extends HttpServlet {
@@ -29,9 +25,19 @@ public class UserDataServlet extends HttpServlet {
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        request.setCharacterEncoding("UTF-8");
 
-        Addresses address = ads.getAddressByUserID(4);
+        int userID = -1;
+       Cookie ck[] = request.getCookies();
+
+        for (Cookie c:ck
+             ) {
+            if("idUser".equals(c.getName()))
+            {
+               userID = Integer.parseInt(c.getValue());
+            }
+        }
+
+        Addresses address = ads.getAddressByUserID(20);
 
         if(address!=null) {
 
@@ -39,9 +45,10 @@ public class UserDataServlet extends HttpServlet {
             request.setAttribute("houseNumber", address.getHouseNumber());
             request.setAttribute("zipCode", address.getZipcode());
             request.setAttribute("city", address.getCity());
-            request.setAttribute("validData","Twój Adres: ");
+            request.setAttribute("validAddress","Twój Adres: ");
 
         }
+
         else{
             request.setAttribute("street", " ");
             request.setAttribute("houseNumber", " ");
@@ -50,10 +57,9 @@ public class UserDataServlet extends HttpServlet {
             request.setAttribute("validAddress","Jeszcze nie podałeś adresu");
         }
 
+        UserData userData = us.getUserDataByUserID(userID);
 
-        UserData userData = us.getUserDataByUserID(4);
-
-        if(userData!=null) {
+        if(userID!=-1) {
 
             request.setAttribute("name", userData.getName());
             request.setAttribute("sourname", userData.getSourname());

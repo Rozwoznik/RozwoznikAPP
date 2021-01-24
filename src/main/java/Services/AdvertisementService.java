@@ -14,4 +14,7 @@ public class AdvertisementService {
         DatabaseService.execute(query);
 
     }
+
+
+
 }

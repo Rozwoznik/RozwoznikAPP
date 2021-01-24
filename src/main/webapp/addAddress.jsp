@@ -11,16 +11,21 @@
         <a class="active" href="#home">Strona Domowa</a>
         <a href="profil.jsp">Twój Profil</a>
         <a href="ogloszenia.jsp">Ogłoszenia</a>
-        <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
-        <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
+        <%String userName="";%>
+
+        <%Cookie ck[] = request.getCookies();%>
+        <% userName = ck[2].getValue();%>
+
+        <a href="profil.jsp" style="float:right; "> Zalogowano  <%=userName%><br> </a>
+        <a href="logout.jsp" style="float:right; "> Wyloguj <%=userName%><br> </a>
     </div>
 
     <div class="container-login">
             <div class="wrap-login p-l-55 p-r-55 p-t-65 p-b-50">
                 <form class="login-form validate-form" action="AddAddressServlet" method="post">
 						<span class="login-form-title p-b-33">
-							Uzupelnij swój adres:
-						</span>
+                            Dane
+                        </span>
 
                     <div class="wrap-input  ">
                         <input class="input" type="text" name="city" placeholder="Miasto">
@@ -41,8 +46,6 @@
                     </div>
 
                     <div class="wrap-input  ">
-                        < id="errorFirstNameMissing" style="visibility:hidden;">*Please provide your first
-><br/>
                         <input class="input" type="text" name="zipCode" placeholder="Kod pocztowy">
                         <span class="focus-input-1"></span>
                         <span class="focus-input-2"></span>
@@ -53,12 +56,12 @@
                             Zatwierdź
                         </button>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 <div id="parent">
     <form id="form_login" action="RegisterServlet" method="post">
         Nazwa uzytkownika:<input type="text" name="nick"><br>

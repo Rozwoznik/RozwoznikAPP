@@ -5,7 +5,7 @@
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://25.43.228.156:3306/rozwoznik</jdbc-url>
+      <jdbc-url>jdbc:mariadb://192.168.192.172:3306/rozwoznik</jdbc-url>
     </data-source>
   </component>
 </project>

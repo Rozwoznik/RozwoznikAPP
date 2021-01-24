@@ -35,7 +35,8 @@ public class LoginServlet extends HttpServlet {
                 response.addCookie(c);
             }
 
-            response.sendRedirect("/ProfileServlet");
+            request.setAttribute("userName",nickname);
+            request.getRequestDispatcher("welcomeUser.jsp").include(request, response);
         } else {
             out.print("Bledny login lub haslo!");
             request.getRequestDispatcher("login.jsp").include(request, response);

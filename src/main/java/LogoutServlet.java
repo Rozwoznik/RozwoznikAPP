@@ -15,7 +15,7 @@ public class LogoutServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
 
-        request.getRequestDispatcher("Links/link.html").include(request, response);
+        request.getRequestDispatcher("login.jsp").include(request, response);
 
         Cookie ck=new Cookie("name","");
         ck.setMaxAge(0);

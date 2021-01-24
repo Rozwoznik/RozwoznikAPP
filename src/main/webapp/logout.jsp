@@ -18,33 +18,28 @@
 
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="nonLog.jsp" >Twój Profil</a>
+        <a href="profil.jsp" >Twój Profil</a>
         <a href="ogloszenia.jsp">Ogłoszenia</a>
-        <a href="register.jsp" style="float:right; margin-right:50px;"> Zarejestruj Się </a>
-        <a href="login.jsp" style="float:right; "> Zaloguj Się</a>
+        <%String userName="";%>
+
+        <%Cookie ck[] = request.getCookies();%>
+        <% userName = ck[2].getValue();%>
+
+        <a href="profil.jsp" style="float:right; "> Zalogowano  <%=userName%><br> </a>
+        <a href="logout.jsp" style="float:right; "> Wyloguj <%=userName%><br> </a>
     </div>
 
     <div class="container-login">
         <div class="wrap-login p-l-55 p-r-55 p-t-65 p-b-50">
-            <form class="login-form validate-form" action="Login" method="post">
+            <form class="login-form validate-form" action="LogoutServlet" method="get">
 					<span class="login-form-title p-b-33">
-						Zaloguj
+						Czy chcesz się wylogować ?
 					</span>
-                <div class="wrap-input ">
-                    <input class="input" type="text" name="name" placeholder="email">
-                    <span class="focus-input-1"></span>
-                    <span class="focus-input-2"></span>
-                </div>
 
-                <div class="wrap-input  ">
-                    <input class="input" type="password" name="password" placeholder="password">
-                    <span class="focus-input-1"></span>
-                    <span class="focus-input-2"></span>
-                </div>
 
                 <div class="container-login-form-btn m-t-20 " type="submit" value="Login">
                     <button class="login-form-btn">
-                        Zatwierdź
+                        Wyloguj się
                     </button>
                 </div>
 

@@ -1,6 +1,7 @@
 package Services;
 
 import Model.User;
+import Model.UserData;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,8 +13,7 @@ public class UserDataService {
         DatabaseService.execute(query);
     }
 
-    public void UpdataUserData(int id, User user){
-    }
+
 
     public User getUserById(int id) {
         String query = String.format("SELECT * From User where idUser=%d", id);

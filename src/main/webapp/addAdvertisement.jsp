@@ -10,10 +10,15 @@
 <div class="limiter">
     <div class="topnav">
         <a class="active" href="#home">Strona Domowa</a>
-        <a href="#news">Twój Profil</a>
-        <a href="#contact">Ogłoszenia</a>
-        <a href="#about">Twoje Ogłoszenia</a>
-        <a href="znajdzOgloszenie.html"> Znajdz ogłoszenie </a>
+        <a href="profil.jsp">Twój Profil</a>
+        <a href="ogloszenia.jsp">Ogłoszenia</a>
+        <%String userName="";%>
+
+        <%Cookie ck[] = request.getCookies();%>
+        <% userName = ck[2].getValue();%>
+
+        <a href="profil.jsp" style="float:right; "> Zalogowano  <%=userName%><br> </a>
+        <a href="logout.jsp" style="float:right; "> Wyloguj <%=userName%><br> </a>
 
 
     </div>
